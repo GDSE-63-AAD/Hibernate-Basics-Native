@@ -14,7 +14,7 @@ public class HibernateConfig {
   private static SessionFactory buildSessionFactory(){
       StandardServiceRegistry standardRegistry =
               new StandardServiceRegistryBuilder()
-                      .configure( "org/hibernate/example/hibernate.cfg.xml" )
+                      .loadProperties( "application.properties" )
                       .build();
 
       Metadata metadata = new MetadataSources( standardRegistry )
